@@ -1,0 +1,13 @@
+graph TD
+    A[Start] --> B[User sends POST request to /auth/sign-up]
+    B --> C[User sends POST request to /auth/login]
+    C --> D[User sends GET request to /profile]
+    C --> E[User sends GET request to /task]
+    E --> F[User sends POST request to /task with answer]
+    D --> G[System returns user profile with top position]
+    F --> H[System validates answer and updates score]
+    G --> I[User views profile with top position]
+    H --> J[User earns or loses points based on answer]
+    I --> K[User can request /top10 to see top users]
+    J --> K
+    K[End]
